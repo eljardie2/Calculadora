@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Calculadora</h1>
+      <p class="subtitle">Operaciones matemáticas y cálculos geométricos</p>
+    </header>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-panel="matematicas" role="tab" aria-selected="true">
+        Operaciones matemáticas
+      </button>
+      <button class="tab" data-panel="geometria" role="tab" aria-selected="false">
+        Figuras geométricas
+      </button>
+    </nav>
+
+    <main>
+      <!-- Operaciones matemáticas -->
+      <section id="matematicas" class="panel active" role="tabpanel">
+        <h2>Operaciones básicas</h2>
+        <form id="form-matematicas" class="card">
+          <div class="field-row">
+            <label for="num1">Primer número</label>
+            <input type="number" id="num1" step="any" required placeholder="Ej: 10">
+          </div>
+          <div class="field-row">
+            <label for="operacion">Operación</label>
+            <select id="operacion" required>
+              <option value="suma">Suma (+)</option>
+              <option value="resta">Resta (−)</option>
+              <option value="multiplicacion">Multiplicación (×)</option>
+              <option value="division">División (÷)</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <label for="num2">Segundo número</label>
+            <input type="number" id="num2" step="any" required placeholder="Ej: 5">
+          </div>
+          <button type="submit" class="btn-primary">Calcular</button>
+        </form>
+        <div id="resultado-matematicas" class="resultado" hidden></div>
+      </section>
+
+      <!-- Figuras geométricas -->
+      <section id="geometria" class="panel" role="tabpanel" hidden>
+        <h2>Área y perímetro</h2>
+        <form id="form-geometria" class="card">
+          <div class="field-row">
+            <label for="figura">Figura</label>
+            <select id="figura" required>
+              <option value="circulo">Círculo</option>
+              <option value="cuadrado">Cuadrado</option>
+              <option value="rectangulo">Rectángulo</option>
+              <option value="triangulo">Triángulo</option>
+            </select>
+          </div>
+          <div id="campos-geometria" class="campos-dinamicos"></div>
+          <button type="submit" class="btn-primary">Calcular</button>
+        </form>
+        <div id="resultado-geometria" class="resultado" hidden></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
